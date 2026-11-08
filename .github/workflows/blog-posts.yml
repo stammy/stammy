@@ -8,13 +8,31 @@ on:
 permissions:
   contents: write
 
+env:
+  FEED_URL: https://paulstamatiou.com/posts.xml
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
+      # Only update if the feed is reachable and actually contains posts.
+      - name: Check feed is reachable
+        id: feed
+        run: |
+          if curl -fsSL --retry 3 --retry-delay 10 --max-time 30 "$FEED_URL" -o feed.xml \
+             && grep -q "<item" feed.xml; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Feed unreachable or empty; leaving README unchanged."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.feed.outputs.ok == 'true'
+
       - uses: gautamkrishnar/blog-post-workflow@v1
+        if: steps.feed.outputs.ok == 'true'
         with:
-          feed_list: "https://paulstamatiou.com/posts.xml"
+          feed_list: ${{ env.FEED_URL }}
           max_post_count: 3
           commit_message: "Update latest blog posts"
