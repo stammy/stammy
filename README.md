@@ -10,11 +10,13 @@ I'm a designer who loves to code. I care a lot about a [high product quality bar
 - 📍 San Francisco
 
 #### ✍️ Recent writing
+<!-- BLOG-POST-LIST:START -->
 - [The Leica reset](https://paulstamatiou.com/the-leica-reset)
 - [2025](https://paulstamatiou.com/2025-year-in-review)
 - [Browse No More](https://paulstamatiou.com/browse-no-more)
-- [The Startup Designer](https://paulstamatiou.com/the-startup-designer)
-- [Stocketa](https://paulstamatiou.com/stocketa)
+<!-- BLOG-POST-LIST:END -->
+
+[More posts →](https://paulstamatiou.com)
 
 #### 🔗 Elsewhere
 [paulstamatiou.com](https://paulstamatiou.com) · [Twitter / X](https://twitter.com/Stammy) · [Mastodon](https://mastodon.social/@stammy) · [Threads](https://threads.net/@pstamatiou) · [Instagram](https://instagram.com/pstamatiou) · [LinkedIn](https://linkedin.com/in/pauls)
